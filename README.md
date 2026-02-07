@@ -93,6 +93,10 @@ Before mapping, the custom robot model was chosen. Instead of Turtlebot3, the cu
 
    $ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
-## Problems encountered in this Task
+## Problems encountered and suggestd future work in this Task
 
+- The LIDAR and SLAM function could not be integrated into the robot
+- Creating and uploading mapping packages allign with the custom robot urdf, in this case, the Bveeta mini model.
+- After Lidar and SLAM are prepared, using the teleop function to move the robot around real environment to map and upload inside the laptop.
+- Save the map
 
