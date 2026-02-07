@@ -54,9 +54,9 @@ Before mapping, the custom robot model was chosen. Instead of Turtlebot3, the cu
 
    - The coding of the setup.py was uploaded above.
 
-7. Building the package
+7. Building the package and sourcing it
 
-   $ cd ~/robot_ws
+   $ cd ~/robot_ws2
    $ source /opt/ros/humble/setup.bash
    $ colcon build --symlink-install
    $ source install/setup.bash
@@ -66,4 +66,17 @@ Before mapping, the custom robot model was chosen. Instead of Turtlebot3, the cu
 9. Connecting Arduino cable to Pi
 
 ## Mapping using the custom robot (Real environment)
+
+1. Inside the robot terminal 1, run the serial_motor_controller
    
+   $ cd ~/robot_ws2
+   $ source install/setup.bash
+   $ ros2 run serial_motor_controller serial_bridge
+
+2. In robot terminal 2, run the teleop inside the same file as terminal 1 (/robot_ws2)
+
+   $ ros2 run teleop_twist_keyboard teleop_twist_keyboard
+
+## Problems encountered in this Task
+
+
