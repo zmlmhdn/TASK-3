@@ -38,48 +38,58 @@ Before mapping, the custom robot model was chosen. Instead of Turtlebot3, the cu
 3. Creating the package inside the Pi
 
    $ mkdir -p ~/robot_ws2/src
+   
    $ cd ~/robot_ws2
+
    $ ros2 pkg create --build-type ament_python serial_motor_controller --dependencies rclpy geometry_msgs
    
-4. Installing pyserial
+5. Installing pyserial
 
    $ cd ~/robot_ws
+
    $ sudo apt install python3-serial
    
-5. Creating the python serial bridge script
+7. Creating the python serial bridge script
 
    $ cd ~/robot_ws/src/serial_motor_controller/serial_motor_controller
+
    $ nano serial_bridge.py
 
    - The coding of the serial_bridge.py was uploaded above.
 
-6. Updating setup,py file
+9. Updating setup,py file
 
    $ cd ~/robot_ws/src/serial_motor_controller
+
    $ nano setup.py
 
    - The coding of the setup.py was uploaded above.
 
-7. Building the package and sourcing it
+11. Building the package and sourcing it
 
    $ cd ~/robot_ws2
+   
    $ source /opt/ros/humble/setup.bash
+   
    $ colcon build --symlink-install
+   
    $ source install/setup.bash
 
-8. Uploading the Arduino code into Pi (the code file is uploaded above)
+11. Uploading the Arduino code into Pi (the code file is uploaded above)
 
-9. Connecting Arduino cable to Pi
+12. Connecting Arduino cable to Pi
 
 ## Mapping using the custom robot (Real environment)
 
 1. Inside the robot terminal 1, run the serial_motor_controller
    
    $ cd ~/robot_ws2
+
    $ source install/setup.bash
+
    $ ros2 run serial_motor_controller serial_bridge
 
-2. In robot terminal 2, run the teleop inside the same file as terminal 1 (/robot_ws2)
+3. In robot terminal 2, run the teleop inside the same file as terminal 1 (/robot_ws2)
 
    $ ros2 run teleop_twist_keyboard teleop_twist_keyboard
 
