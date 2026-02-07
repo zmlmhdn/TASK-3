@@ -6,18 +6,22 @@
    $ export TURTLEBOT3_MODEL=waffle
    $ ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
 
-3. Teleop for movement of the robot in simulation
+2. Teleop for movement of the robot in simulation
    
    $ ros2 run turtlebot3_teleop teleop_keyboard
 
-5. Mapping in Cartographer
+3. Mapping in Cartographer
+
    $ ros2 launch turtlebot3_cartographer cartographer.launch.py use_sim_time:=True
 
-6. Teleop twist keyboard
+4. Teleop twist keyboard
+
    $ ros2 run turtlebot3_teleop teleop_keyboard
 
-7. Drive the robot inside simulation, mapping the environment
-8. Save the map
+5. Drive the robot inside simulation, mapping the environment
+
+6. Save the map
+
    $ ros2 run nav2_map_server map_saver_cli -f ~/sim_map
 
 ## Builing packages inside the custom robot
